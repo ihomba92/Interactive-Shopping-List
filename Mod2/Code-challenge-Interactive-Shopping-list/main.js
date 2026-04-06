@@ -45,15 +45,6 @@ function togglePurchased(index) {
   renderList();
 }
 console.log(shoppingList);
-
-
-//the function that allow marking off the object as purchased
-// const updateShoppingList =(index) =>{
-//   shoppingList[index].purchased = !shoppingList[index].purchased; 
-//   renderList();
-//    console.log(shoppingList);
-// };
-
 //Function that will add elements to the array
 function submitData(){
   const nameInput = document.getElementById("itemname");
@@ -105,8 +96,6 @@ function calculateTotal() {
     return sum + price;
   }, 0);
   // Total of all items regardless of purchase status
-//   const grandTotal = shoppingList.reduce((sum, shoppingListItem) =>
-//     sum + (parseFloat(shoppingListItem.price) || 0), 0);
 // // Total of only items marked 'purchased'
   const purchasedTotal = shoppingList
     .filter(shoppingListItem => shoppingListItem.purchased === true)
@@ -114,8 +103,6 @@ function calculateTotal() {
       const price = parseFloat(shoppingListItem.price) || 0;
       return sum + price;
     }, 0);
-
-
  const display = document.getElementById("totalDisplay");
   if (display) {
     display.innerHTML = `
