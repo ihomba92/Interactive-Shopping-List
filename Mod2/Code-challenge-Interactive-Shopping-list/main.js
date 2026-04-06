@@ -91,24 +91,32 @@ function deleteItem(index) {
 }
 function calculateTotal() {
   //calculate sumtotal of purchased items
-  const grandTotal = shoppingList.reduce((sum, shoppingListItem) => {
-    const price = parseFloat(shoppingListItem.price) || 0;
-    return sum + price;
-  }, 0);
+  const grandTotal = shoppingList.reduce((sum, shoppingListItem) => sum + (parseFloat(shoppingListItem.price) || 0), 0);
+  //   const price = parseFloat(shoppingListItem.price) || 0;
+  //   return sum + price;
+  // }, 0);
   // Total of all items regardless of purchase status
 // // Total of only items marked 'purchased'
   const purchasedTotal = shoppingList
     .filter(shoppingListItem => shoppingListItem.purchased === true)
-    .reduce((sum, shoppingListItem) => {
-      const price = parseFloat(shoppingListItem.price) || 0;
-      return sum + price;
-    }, 0);
+    .reduce((sum, shoppingListItem) => sum + (parseFloat(shoppingListItem.price) || 0), 0);
+    //   const price = parseFloat(shoppingListItem.price) || 0;
+    //   return sum + price;
+    // }, 0);
  const display = document.getElementById("totalDisplay");
+ const clearBtn = document.getElementById("clearBtn");
   if (display) {
-    display.innerHTML = `
+    if (shoppingList.length > 0){
+      display.style.display = "block";
+      if (clearBtn) clearBtn.style.display = "inline-block"; // Show clear button when there are items in the list
+      display.innerHTML = `
       <strong>Grand Total:</strong> ${grandTotal.toFixed(2)} <br>
       <span style="color: red;"><strong>Purchased Total:</strong> ${purchasedTotal.toFixed(2)}</span>
     `;
+  } else {
+    display.style.display = "none"; //This hides the total display when there are no items in the list
+    if (clearBtn) clearBtn.style.display = "none"; //This hides the clear button when there are no items in the list
+    }
   }
 }
 //fuction to clear the list once done with the purchase
@@ -116,12 +124,8 @@ function clearList() {
   shoppingList.length = 0; 
   renderList();
   // console.log("List cleared");
-}
+   }
 
 // Initial render call when the script loads
 renderList();
-
-   
-
-
 
