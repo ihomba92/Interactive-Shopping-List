@@ -2,7 +2,7 @@
 listing all theitem they intend to purchase, display which items are purchased and the total cost, it should mark item as purchased. 
 The feature should also be able to clear the list once done.**/
 
-// the parent array where all orders are stored in the form of objects
+// the parent array where all orders are stored.
 // Initialize list from LocalStorage or empty array if none exists
 let shoppingList = JSON.parse(localStorage.getItem("shoppingList")) || [];
 // Updated Total Calculation (Calculating based on purchased items only)
