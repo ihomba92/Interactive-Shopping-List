@@ -50,7 +50,6 @@ function submitData(){
   const nameInput = document.getElementById("itemname");
   const priceInput = document.getElementById("pricename");
   if (nameInput.value === "" || priceInput.value === "") {
-    alert("Please enter both item name and price.");
     return;
   }
 
@@ -92,17 +91,12 @@ function deleteItem(index) {
 function calculateTotal() {
   //calculate sumtotal of purchased items
   const grandTotal = shoppingList.reduce((sum, shoppingListItem) => sum + (parseFloat(shoppingListItem.price) || 0), 0);
-  //   const price = parseFloat(shoppingListItem.price) || 0;
-  //   return sum + price;
-  // }, 0);
   // Total of all items regardless of purchase status
-// // Total of only items marked 'purchased'
+ // Total of only items marked 'purchased'
   const purchasedTotal = shoppingList
     .filter(shoppingListItem => shoppingListItem.purchased === true)
     .reduce((sum, shoppingListItem) => sum + (parseFloat(shoppingListItem.price) || 0), 0);
-    //   const price = parseFloat(shoppingListItem.price) || 0;
-    //   return sum + price;
-    // }, 0);
+
  const display = document.getElementById("totalDisplay");
  const clearBtn = document.getElementById("clearBtn");
   if (display) {

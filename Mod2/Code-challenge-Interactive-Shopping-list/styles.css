@@ -11,3 +11,11 @@
     justify-content: start;
 }
 
+button {
+    background-color: #424842;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+}
