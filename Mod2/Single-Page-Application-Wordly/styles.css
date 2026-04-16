@@ -1,0 +1,101 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+*{box-sizing:border-box}
+body, html {padding:0; margin:0} 
+body {background:#232323; color:#fff}
+.opaque {position:absolute; top:0; left:0; right:0; bottom:0; opacity:0; background:#d2d6f1;}
+.lt-ie9 .opaque {display:none;}
+.feature {position:fixed; top:0; z-index:0; width:100%; height: 100vh; background: url(https://images.wallpaperscraft.com/image/single/books_library_shelves_120472_2560x1440.jpg);
+background-size:150%; background-position: center; background-repeat: no-repeat; transition: filter 0.3s ease-out, background-size 0.3s ease-out,
+opacity 0.3s ease-out; transform: translateZ(0) transform, filter; backface-visibility: hidden;} 
+    /* -webkit-box-shadow: 0 -50px 20px -20px #232323 inset;
+       -moz-box-shadow: 0 -50px 20px -20px #232323 inset;
+            box-shadow: 0 -50px 20px -20px #232323 inset;
+  } */
+.content {position:relative; z-index:1; padding-top:100%; width:90%; margin:0 auto;}
+
+@media only screen and (min-width:36.250em) {
+  .content {width:60%; padding-top:35% }
+}
+
+h1 {
+    text-align: center;
+    background: hsl(74, 63%, 73%); 
+    border-radius: 15px;
+    color: #11171e;        
+    display: block;
+    width:fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px; 
+    font-family: 'Poppins', sans-serif;
+    padding: 5px 10px;
+}
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    gap: 20px;
+}
+
+#searchInput{
+    padding: 10px;
+    width: 50%;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    border-color: #c8e09d;
+}
+#searchButton {
+    padding: 10px 20px;
+    background-color: Muted Gold / Brass (#B27A2A);         
+    color: #170707;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+#searchButton:hover {
+    background-color: #0056b3;
+}       
+
+#result{
+    margin-top: 40px;
+    padding: 20px;
+    border: #2A2320;
+    border-radius: 10px;
+    background-color: 	Espresso (#2A2320);
+    color: white;
+    font-size: 20px;
+    text-align: center; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+}
+#viewFavorites{
+    margin-top: 40px;
+    padding: 5px;
+    border: #2A2320;
+    border-radius: 10px;
+    background-color: rgb(184, 203, 113);
+    color: black;
+    font-size: 10px;
+    text-align: center; 
+    display: block;
+    width:fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Poppins', sans-serif;
+}
+.fav-btn{
+    background-color: #d4d130;
+    color: #170707;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+audio{
+    background-color: #d4d130;
+}
