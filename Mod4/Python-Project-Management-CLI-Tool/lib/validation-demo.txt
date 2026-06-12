@@ -1,0 +1,34 @@
+step 1: Test User Routing & Validations
+# These should succeed:
+python admin_tool.py add-user alex --role lead
+python admin_tool.py add-user jordan --role developer
+python admin_tool.py add-user taylor --role developer
+
+# This should trigger your custom error block:
+python admin_tool.py add-user hacker --role CEO
+
+Step 2: Test Project Creation & One-to-Many Links
+# This should succeed:
+python admin_tool.py add-project WebApp --owner alex
+
+# This should fail because 'ghost' doesn't exist in data.json:
+python admin_tool.py add-project Database --owner ghost
+
+Step 3: Test Adding Tasks with Multiple Contributors
+python admin_tool.py add-task "Design API Spec" --project WebApp --contributors alex jordan
+python admin_tool.py add-task "Configure OAuth2" --project WebApp --contributors jordan taylor
+
+Step 4: Verify the Rich Tables and File Persistence
+# View the entire project ecosystem board
+python admin_tool.py list-projects
+
+# Filter results specifically to Alex's workspace profile
+python admin_tool.py list-projects --user alex
+
+Step 5: Test State Persistence
+# Resolve the first task item
+python admin_tool.py complete-task 1
+
+# Review the board again to see the task status change to [green]Completed[/green]
+python admin_tool.py list-projects
+

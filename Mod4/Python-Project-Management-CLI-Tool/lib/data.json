@@ -1,0 +1,57 @@
+{
+    "users": [
+        {
+            "username": "emily",
+            "role": "lead",
+            "projects": []
+        },
+        {
+            "username": "jake",
+            "role": "developer",
+            "projects": []
+        },
+        {
+            "username": "alex",
+            "role": "lead",
+            "projects": [
+                "WebApp"
+            ]
+        },
+        {
+            "username": "jordan",
+            "role": "developer",
+            "projects": []
+        },
+        {
+            "username": "taylor",
+            "role": "developer",
+            "projects": []
+        }
+    ],
+    "projects": [
+        {
+            "name": "WebApp",
+            "owner": "alex",
+            "tasks": [
+                {
+                    "id": 1,
+                    "title": "Design API Spec",
+                    "is_completed": true,
+                    "contributors": [
+                        "alex",
+                        "jordan"
+                    ]
+                },
+                {
+                    "id": 2,
+                    "title": "Configure OAuth2",
+                    "is_completed": false,
+                    "contributors": [
+                        "jordan",
+                        "taylor"
+                    ]
+                }
+            ]
+        }
+    ]
+}
